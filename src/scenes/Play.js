@@ -13,8 +13,7 @@ export default class Play extends Scene {
         this.addChild(footer);
 
         const fish = new Fish();
-        fish.x = -fish.width / 2;
-        fish.y = -fish.height / 2;
+        fish.center();
         this.addChild(fish);
 
     }

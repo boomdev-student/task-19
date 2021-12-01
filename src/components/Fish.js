@@ -23,16 +23,24 @@ export default class Fish extends Sprite {
     _toggleSize() {
         if (this.texture === this.TEXTURE_SMALL) {
             this.expand();
-        } else {
-            this.contract();
         }
+    }
+
+    center() {
+        this.x = -this.width / 2;
+        this.y = -this.height / 2;
     }
 
     expand() {
         this.texture = this.TEXTURE_BIG;
+        this.scale.set(1.5, 1.5);
+        this.center();
+        setTimeout(() => this.contract(), 1500);
     }
 
     contract() {
         this.texture = this.TEXTURE_SMALL;
+        this.scale.set(1, 1);
+        this.center();
     }
 }
