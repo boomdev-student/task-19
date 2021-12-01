@@ -16,7 +16,7 @@ export default class Fish extends Sprite {
         this.interactive = true;
         this.buttonMode = true;
 
-        this.on('pointerdown', this._toggleSize);
+        this.on('click', this._toggleSize);
     }
 
     _toggleSize() {
