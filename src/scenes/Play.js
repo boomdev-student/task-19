@@ -1,4 +1,4 @@
-import {Sprite} from 'pixi.js';
+import {Sprite} from 'pixi.js-legacy';
 import Scene from './Scene';
 import gsap from 'gsap';
 import Footer from '../components/Footer';

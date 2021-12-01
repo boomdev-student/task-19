@@ -1,4 +1,4 @@
-import {Texture, Sprite} from 'pixi.js';
+import {Texture, Sprite} from 'pixi.js-legacy';
 
 export default class Fish extends Sprite {
 
