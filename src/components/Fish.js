@@ -1,6 +1,6 @@
-import * as PIXI from 'pixi.js-legacy';
+import {Texture, Sprite} from 'pixi.js-legacy';
 
-export default class Fish extends PIXI.Sprite {
+export default class Fish extends Sprite {
 
     constructor() {
         super();
@@ -9,7 +9,9 @@ export default class Fish extends PIXI.Sprite {
         this.width = 931;
         this.height = 533;
 
-        this.texture = PIXI.Texture.from('small');
+        this.TEXTURE_SMALL = Texture.from('small');
+
+        this.texture = this.TEXTURE_SMALL;
 
         this.interactive = true;
         this.buttonMode = true;
@@ -18,7 +20,7 @@ export default class Fish extends PIXI.Sprite {
     }
 
     _toggleSize() {
-        if (this.texture === PIXI.Texture.from('small')) {
+        if (this.texture === this.TEXTURE_SMALL) {
             this.expand();
         }
     }
@@ -29,7 +31,7 @@ export default class Fish extends PIXI.Sprite {
     }
 
     expand() {
-        this.texture = PIXI.Texture.from('big');
+        this.texture = Texture.from('big');
         this.scale.x = 1.5;
         this.scale.y = 1.5;
         this.center();
@@ -37,7 +39,7 @@ export default class Fish extends PIXI.Sprite {
     }
 
     contract() {
-        this.texture = PIXI.Texture.from('small');
+        this.texture = Texture.from('small');
         this.scale.x = 1;
         this.scale.y = 1;
         this.center();
